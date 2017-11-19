@@ -143,7 +143,7 @@ public class PopulateTableQueries {
 	public static final String populateStudyRooms1="INSERT INTO STUDY_ROOMS(ROOM_ID, LOCATION_IN_LIBRARY_ID, NAME, MAX_CAPACITY)"
 			+"VALUES(80002, 10030, 'JL', 5)";
 	public static final String populateStudyRooms2="INSERT INTO STUDY_ROOMS(ROOM_ID, LOCATION_IN_LIBRARY_ID, NAME, MAX_CAPACITY)"
-			+"VALUES(80003, 10030, 'CS',3);";
+			+"VALUES(80003, 10030, 'CS',3)";
 	public static final String populateStudyRooms3="INSERT INTO STUDY_ROOMS(ROOM_ID, LOCATION_IN_LIBRARY_ID, NAME, MAX_CAPACITY)"
 	+"VALUES(80001,10030,'DV',8)";
 	

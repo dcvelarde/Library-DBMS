@@ -36,8 +36,10 @@ public class Main {
 		
 		CreateTables ct = new CreateTables();
 		DropTables dt = new DropTables();
-		ct.createTables(s);
-		dt.dropTables(s);
+		PopulateTables pt = new PopulateTables();
+//		ct.createTables(s);
+//		pt.populateTables(s);
+//		dt.dropTables(s);
 		
 		String[] buttons = { "Create Tables", "Drop Tables", "Populate Tables", "Queries","Cancel"};
 		int returnValue = 0;
@@ -46,6 +48,18 @@ public class Main {
 		{
 			returnValue = JOptionPane.showOptionDialog(null, "Please select one of the following options: ",
 			"Library DBMS", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, buttons, buttons[0]);
+			if(returnValue == 0)
+			{
+				ct.createTables(s);
+			}
+			else if(returnValue == 1)
+			{
+				pt.populateTables(s);
+			}
+			else if(returnValue == 2)
+			{
+				dt.dropTables(s);
+			}
 			if(returnValue == 3)
 			{
 				while(secondReturnValue != null)
