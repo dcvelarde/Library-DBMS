@@ -2,11 +2,12 @@
 public class DropTables {
 	
 	private String dropTablesQuery;
+	private final String dropAddressQuery = "DROP TABLE ADDRESS1";
 	
 	public DropTables()
 	{
 		StringBuilder sb = new StringBuilder();
-		sb.append("DROP TABLE ADDRESS1");
+		sb.append(dropAddressQuery);
 		dropTablesQuery = sb.toString();
 	}
 	
