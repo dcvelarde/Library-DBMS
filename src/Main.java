@@ -41,7 +41,7 @@ public class Main {
 //		pt.populateTables(s);
 //		dt.dropTables(s);
 		
-		String[] buttons = { "Create Tables", "Drop Tables", "Populate Tables", "Queries","Cancel"};
+		String[] buttons = { "Create Tables", "Populate Tables", "Drop Tables", "Queries","Cancel"};
 		int returnValue = 0;
 		String secondReturnValue = "";
 		while(returnValue != 4)
@@ -51,14 +51,17 @@ public class Main {
 			if(returnValue == 0)
 			{
 				ct.createTables(s);
+				JOptionPane.showMessageDialog(null, "Successfully created tables.");
 			}
 			else if(returnValue == 1)
 			{
 				pt.populateTables(s);
+				JOptionPane.showMessageDialog(null, "Successfully populated tables.");
 			}
 			else if(returnValue == 2)
 			{
 				dt.dropTables(s);
+				JOptionPane.showMessageDialog(null, "Dropped All Tables.");
 			}
 			if(returnValue == 3)
 			{
