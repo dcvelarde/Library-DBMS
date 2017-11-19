@@ -34,8 +34,8 @@ public class Main {
 		
 		CreateTables ct = new CreateTables();
 		DropTables dt = new DropTables();
-		s.executeUpdate(ct.getCreateTablesQuery());
-		s.executeUpdate(dt.getDropTablesQuery());
+		ct.createTables(s);
+		dt.dropTables(s);
 		s.close();
 		System.out.println("Closing db connection.");
 		connection.close();

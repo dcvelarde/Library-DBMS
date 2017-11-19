@@ -1,19 +1,26 @@
+import java.sql.Statement;
 
 public class DropTables {
 	
-	private String dropTablesQuery;
 	private final String dropAddressQuery = "DROP TABLE ADDRESS1";
+	private final String dropLibUsersQuery = "DROP TABLE LIBRARY_USERS1";
 	
 	public DropTables()
 	{
-		StringBuilder sb = new StringBuilder();
-		sb.append(dropAddressQuery);
-		dropTablesQuery = sb.toString();
+		
 	}
 	
-	public String getDropTablesQuery()
+	public void dropTables(Statement statement)
 	{
-		return this.dropTablesQuery;
+		try
+		{
+			statement.executeUpdate(dropAddressQuery);
+			statement.executeUpdate(dropLibUsersQuery);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
 }
