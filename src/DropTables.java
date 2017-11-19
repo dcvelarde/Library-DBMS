@@ -32,23 +32,29 @@ public class DropTables {
 	{
 		try
 		{
-			statement.executeUpdate(dropAddressQuery);
-			statement.executeUpdate(dropLibUsersQuery);
-			statement.executeUpdate(dropLibrariansQuery);
-			statement.executeUpdate(dropLILQuery);
-			statement.executeUpdate(dropLibraryCardsQuery);
-			statement.executeUpdate(dropItemsQuery);
-			statement.executeUpdate(dropBorrowedItemsQuery);
-			statement.executeUpdate(dropHoldItemsQuery);
-			statement.executeUpdate(dropReturnedItemsQuery);
-			statement.executeUpdate(dropBooksQuery);
-			statement.executeUpdate(dropAudioBooksQuery);
-			statement.executeUpdate(dropMoviesQuery);
-			statement.executeUpdate(dropCDsQuery);
-			statement.executeUpdate(dropStudyRoomsQuery);
 			statement.executeUpdate(dropRoomReservationsQuery);
-			statement.executeUpdate(dropComputersQuery);
+			statement.executeUpdate(dropStudyRoomsQuery);
+			
 			statement.executeUpdate(dropComputerLoginsQuery);
+			statement.executeUpdate(dropComputersQuery);
+			
+			statement.executeUpdate(dropHoldItemsQuery);
+			statement.executeUpdate(dropBorrowedItemsQuery);
+			statement.executeUpdate(dropReturnedItemsQuery);
+			
+			statement.executeUpdate(dropMoviesQuery);
+			statement.executeUpdate(dropAudioBooksQuery);
+			statement.executeUpdate(dropBooksQuery);
+			statement.executeUpdate(dropCDsQuery);
+			statement.executeUpdate(dropItemsQuery);
+			
+			statement.executeUpdate(dropLibrariansQuery);
+			
+			statement.executeUpdate(dropLibraryCardsQuery);
+			statement.executeUpdate(dropLibUsersQuery);
+			
+			statement.executeUpdate(dropLILQuery);
+			statement.executeUpdate(dropAddressQuery);
 		}
 		catch(Exception e)
 		{
