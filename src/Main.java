@@ -40,7 +40,6 @@ public class Main {
 		dt.dropTables(s);
 		
 		String[] buttons = { "Create Tables", "Drop Tables", "Populate Tables", "Queries","Cancel"};
-		String[] buttons2 = { "", "Query1", "Query2", "Query3","Cancel"};
 		int returnValue = 0;
 		String secondReturnValue = "";
 		while(returnValue != 4)

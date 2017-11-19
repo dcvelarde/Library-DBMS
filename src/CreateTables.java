@@ -3,7 +3,7 @@ import java.sql.Statement;
 
 public class CreateTables {
 	
-	private final String createAddressQuery = "CREATE TABLE ADDRESS1("
+	private final String createAddressQuery = "CREATE TABLE ADDRESS("
 			  +"ADDRESS_ID INTEGER NOT NULL,"
 				+"ADDRESS_LINE1 VARCHAR2(30) DEFAULT NULL,"
 				+"ADDRESS_LINE2 VARCHAR2(30) DEFAULT NULL,"
@@ -13,7 +13,7 @@ public class CreateTables {
 				+"PROVINCE VARCHAR2(20) DEFAULT NULL,"
 				+"PRIMARY KEY(ADDRESS_ID)"
 				+")";
-	private final String createLibUsersQuery = "CREATE TABLE LIBRARY_USERS1"
+	private final String createLibUsersQuery = "CREATE TABLE LIBRARY_USERS"
 			+"("
 			+"USER_ID INTEGER NOT NULL"
 			+", FIRST_NAME VARCHAR2(30) DEFAULT NULL"

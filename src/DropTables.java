@@ -2,8 +2,8 @@ import java.sql.Statement;
 
 public class DropTables {
 	
-	private final String dropAddressQuery = "DROP TABLE ADDRESS1";
-	private final String dropLibUsersQuery = "DROP TABLE LIBRARY_USERS1";
+	private final String dropAddressQuery = "DROP TABLE ADDRESS";
+	private final String dropLibUsersQuery = "DROP TABLE LIBRARY_USERS";
 	
 	public DropTables()
 	{
