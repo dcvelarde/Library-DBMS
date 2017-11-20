@@ -51,7 +51,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery4);
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+					//SELECT * FROM ADDRESS WHERE CITY = 'TORONTO'
 				}
 			}
 			else if(option == 5)
@@ -59,7 +59,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery5);
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+					//SELECT * FROM BORROWED_ITEMS WHERE DUE_DATE = '04/10/2017'
 				}
 			}
 			else if(option == 6)
@@ -67,7 +67,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery6);
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+					//SELECT * FROM LIBRARY_USERS WHERE FIRST_NAME = 'Jason' ORDER BY LAST_NAME ASC;
 				}
 			}
 			else if(option == 7)
@@ -75,7 +75,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery7);
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+					//SELECT * FROM LIBRARIANS WHERE EMPLOYEE_TYPE = 'PART-TIME' ORDER BY FIRST_NAME ASC, LAST_NAME ASC
 				}
 			}
 			else if(option == 8)
@@ -83,7 +83,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery8);
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+					//SELECT * FROM BOOKS WHERE AUTHOR = 'J. GEORGE' OR AUTHOR='G. TOLKIEN'
 				}
 			}
 			else if(option == 9)
@@ -91,7 +91,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery9);
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+					//SELECT * FROM STUDY_ROOMS WHERE MAX_CAPACITY >=5
 				}
 			}
 			else if(option == 10)
@@ -99,7 +99,14 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery10);
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+//					SELECT LIBRARY_CARDS.USER_ID,LIBRARY_USERS.FIRST_NAME,LIBRARY_USERS.LAST_NAME
+//					FROM LIBRARY_CARDS,LIBRARY_USERS
+//					WHERE EXPIRY_DATE <TO_DATE('01/01/2022','MM/DD/YYYY') AND
+//					EXPIRY_DATE>TO_DATE('01/01/2017','MM/DD/YYYY')
+//					AND LIBRARY_CARDS.USER_ID = LIBRARY_USERS.USER_ID
+//					ORDER BY LAST_NAME ASC;
+					
+					
 				}
 			}
 			else
@@ -107,7 +114,15 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery11);				
 				while(rs.next())
 				{
-					//Get values from columns and append it to string builder object
+//					SELECT sr.ROOM_ID,sr.NAME
+//					FROM STUDY_ROOMS sr
+//					WHERE NOT EXISTS
+//					(SELECT rr.ROOM_ID
+//					FROM ROOM_RESERVATIONS rr
+//					WHERE rr.RESERVATION_START_DATE>=TO_DATE('09/25/2017','MM/DD/YYYY')
+//					AND rr.RESERVATION_END_DATE <= TO_DATE('09/30/2017','MM/DD/YYYY')
+//					AND sr.ROOM_ID = rr.ROOM_ID)
+//					ORDER BY NAME ASC;
 				}
 				
 			}
