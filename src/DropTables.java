@@ -16,7 +16,7 @@ public class DropTables {
 	private final String dropMoviesQuery = "DROP TABLE MOVIES";
 	private final String dropCDsQuery = "DROP TABLE CDS";
 	private final String dropStudyRoomsQuery = "DROP TABLE STUDY_ROOMS";
-	private final String dropRoomReservationsQuery = "DROP ROOM_RESERVATIONS";
+	private final String dropRoomReservationsQuery = "DROP TABLE ROOM_RESERVATIONS";
 	private final String dropComputersQuery = "DROP TABLE COMPUTERS";
 	private final String dropComputerLoginsQuery = "DROP TABLE COMPUTER_LOGINS";
 	
