@@ -14,11 +14,15 @@ public class SelectExecuter
 		{
 			if(option == 1)
 			{
-				rs = statement.executeQuery(SelectQueries.selQuery1);
+				rs = statement.executeQuery(SelectQueries.selQuery1);   
 				while(rs.next())
-				{
-					//Get values from columns and append it to string builder object
+			{	   
+					sb.append(rs.getString("first_name") + " - ");
+					sb.append(rs.getString("last_name") + " - ");
+					sb.append(rs.getString("email"));
+					sb.append("\n");
 				}
+				return sb.toString();
 			}
 			else if(option == 2)
 			{
