@@ -14,32 +14,29 @@ public class Main {
 				"jdbc:oracle:thin:@localhost:1521/orcl","system","oracle");
 		System.out.println("Connected to database.");
 		Statement s = connection.createStatement();
-		
-		ResultSet rs = s.executeQuery("SELECT * FROM LIBRARY_USERS");
-		
-		while(rs.next())
-		{
-			String firstName = rs.getString("first_name");
-			String lastName = rs.getString("last_name");
-			String email = rs.getString("email");
-			System.out.println(firstName+" "+lastName+" "+email);
-		}
-		rs.close();
-		
-		rs = s.executeQuery("SELECT * FROM ITEMS");
-		while(rs.next())
-		{
-			String title = rs.getString("title");
-			System.out.println(title);
-		}
-		rs.close();
+//		
+//		ResultSet rs = s.executeQuery("SELECT * FROM LIBRARY_USERS");
+//		
+//		while(rs.next())
+//		{
+//			String firstName = rs.getString("first_name");
+//			String lastName = rs.getString("last_name");
+//			String email = rs.getString("email");
+//			System.out.println(firstName+" "+lastName+" "+email);
+//		}
+//		rs.close();
+//		
+//		rs = s.executeQuery("SELECT * FROM ITEMS");
+//		while(rs.next())
+//		{
+//			String title = rs.getString("title");
+//			System.out.println(title);
+//		}
+//		rs.close();
 		
 		CreateTables ct = new CreateTables();
 		DropTables dt = new DropTables();
 		PopulateTables pt = new PopulateTables();
-//		ct.createTables(s);
-//		pt.populateTables(s);
-//		dt.dropTables(s);
 		
 		String[] buttons = { "Create Tables", "Populate Tables", "Drop Tables", "Queries","Cancel"};
 		int returnValue = 0;

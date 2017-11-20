@@ -20,9 +20,6 @@ public class DropTables {
 	private final String dropComputersQuery = "DROP TABLE COMPUTERS";
 	private final String dropComputerLoginsQuery = "DROP TABLE COMPUTER_LOGINS";
 	
-	
-	
-
 	public DropTables()
 	{
 		
