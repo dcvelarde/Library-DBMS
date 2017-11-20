@@ -37,8 +37,10 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery3);
 				while(rs.next())
 				{
+					sb.append(rs.getString("name") + " - " + rs.getString("MAX_CAPACITY")+"\n");
 					//Get values from columns and append it to string builder object
 				}
+				return sb.toString();
 			}
 			else if(option == 4)
 			{
