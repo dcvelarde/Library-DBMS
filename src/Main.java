@@ -67,8 +67,10 @@ public class Main {
 					secondReturnValue = JOptionPane.showInputDialog("Select a query to execute: \n"
 							+ "1) SELECT * FROM LIBRARY_USERS\n"
 							+ "2) SELECT * FROM ITEMS\n", "text");
-					if(secondReturnValue != null)
-						JOptionPane.showMessageDialog(null, "Results from Query printed here.");
+					if(secondReturnValue != null){
+						String returned = getSelectResults(s,Integer.parseInt(secondReturnValue));
+						JOptionPane.showMessageDialog(null, returned);
+					}
 				}
 			}
 		}
