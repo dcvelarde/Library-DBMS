@@ -1,3 +1,4 @@
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -17,10 +18,12 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery1);   
 				while(rs.next())
 			{	   
-					sb.append(rs.getString("first_name") + " - ");
-					sb.append(rs.getString("last_name") + " - ");
-					sb.append(rs.getString("email"));
-					sb.append("\n");
+//					SELECT * FROM COMPUTER_LOGINS WHERE LOG_IN_START_DATE >=TO_TIMESTAMP('2017-09-27','YYYY-MM-DD');
+					int compID = rs.getInt("COMP_ID");
+					int cardNum = rs.getInt("CARD_NUM");
+					Date loginStartDate = rs.getDate("LOG_IN_START_DATE");
+					Date loginEndDate = rs.getDate("LOG_IN_END_DATE");
+					sb.append(compID+"		"+cardNum+"		"+loginStartDate.toString()+"		"+loginEndDate.toString()+"\n");
 				}
 				return sb.toString();
 			}
@@ -29,8 +32,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery2);
 				while(rs.next())
 				{
-					sb.append(rs.getString("title") + "\n");
-					//Get values from columns and append it to string builder object
+//					SELECT * FROM STUDY_ROOMS WHERE MAX_CAPACITY >=5
 				}
 				return sb.toString();
 			}
@@ -39,8 +41,8 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery3);
 				while(rs.next())
 				{
-					sb.append(rs.getString("name") + " - " + rs.getString("MAX_CAPACITY")+"\n");
-					//Get values from columns and append it to string builder object
+//				SELECT * FROM ROOM_RESERVATIONS WHERE RESERVATION_START_DATE 
+//					>=TO_TIMESTAMP('2017-09-26','YYYY-MM-DD') AND RESERVATION_END_DATE<TO_TIMESTAMP('2017-09-29','YYYY-MM-DD')
 				}
 				return sb.toString();
 			}
