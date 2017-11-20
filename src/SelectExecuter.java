@@ -29,8 +29,10 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery2);
 				while(rs.next())
 				{
+					sb.append(rs.getString("title") + "\n");
 					//Get values from columns and append it to string builder object
 				}
+				return sb.toString();
 			}
 			else if(option == 3)
 			{
