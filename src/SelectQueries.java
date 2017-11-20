@@ -1,7 +1,7 @@
 
 public class SelectQueries 
 {
-	public static final String selQuery1="";
+	public static final String selQuery1="SELECT * FROM LIBRARY_USERS";
 	public static final String selQuery2="";
 	public static final String selQuery3="";
 	public static final String selQuery4="";
