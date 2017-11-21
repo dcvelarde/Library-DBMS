@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -18,8 +19,7 @@ public class SelectExecuter
 				rs = statement.executeQuery(SelectQueries.selQuery1);   
 				sb.append("COMP_ID\tCARD_NUM\tLOG_IN_START_DATE\tLOG_IN_END_DATE\n");
 				while(rs.next())
-			{	   
-//					SELECT * FROM COMPUTER_LOGINS WHERE LOG_IN_START_DATE >=TO_TIMESTAMP('2017-09-27','YYYY-MM-DD');
+				{	   
 					int compID = rs.getInt("COMP_ID");
 					int cardNum = rs.getInt("CARD_NUM");
 					Date loginStartDate = rs.getDate("LOG_IN_START_DATE");
@@ -59,9 +59,19 @@ public class SelectExecuter
 			else if(option == 4)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery4);
+				sb.append("ADDRESS_ID\tADDRESS_LINE1\tADDRESS_LINE2\tPOSTAL_CODE\tPHONE_NUMBER\tCITY\tPROVINCE\n");
 				while(rs.next())
 				{
-					//SELECT * FROM ADDRESS WHERE CITY = 'TORONTO'
+					int addressID = rs.getInt("ADDRESS_ID");
+					String line1 = rs.getString("ADDRESS_LINE1");
+					String line2 = rs.getString("ADDRESS_LINE2");
+					String postalCode = rs.getString("POSTAL_CODE");
+//					BigInteger phoneNum = BigInteger.valueOf(rs.getInteger("PHONE_NUMBER").intValue());
+					Integer phoneNumInt = rs.getInt("PHONE_NUMBER");
+					BigInteger phoneNum = BigInteger.valueOf(phoneNumInt.intValue());
+					String city = rs.getString("CITY");
+					String province = rs.getString("PROVINCE");
+					sb.append(addressID+"\t"+line1+"\t"+line2+"\t"+postalCode+"\t"+phoneNum+"\t"+city+"\t"+province+"\n");
 				}
 			}
 			else if(option == 5)
