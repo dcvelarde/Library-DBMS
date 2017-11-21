@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 public class Main {
 
@@ -91,10 +92,10 @@ public class Main {
 									+"\nAND rr.RESERVATION_END_DATE <= TO_DATE('09/30/2017','MM/DD/YYYY')"
 									+"\nAND sr.ROOM_ID = rr.ROOM_ID)"
 									+"\nORDER BY NAME ASC;\n"
-							+ "\n", "text");
+							+ "\n", "1");
 					if(secondReturnValue != null){
 						String returned = se.getSelectResults(s,Integer.parseInt(secondReturnValue));
-						JOptionPane.showMessageDialog(null, returned);
+						JOptionPane.showMessageDialog(null, new JTextArea(returned));
 					}
 				}
 			}

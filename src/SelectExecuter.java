@@ -16,6 +16,7 @@ public class SelectExecuter
 			if(option == 1)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery1);   
+				sb.append("COMP_ID\tCARD_NUM\tLOG_IN_START_DATE\tLOG_IN_END_DATE\n");
 				while(rs.next())
 			{	   
 //					SELECT * FROM COMPUTER_LOGINS WHERE LOG_IN_START_DATE >=TO_TIMESTAMP('2017-09-27','YYYY-MM-DD');
@@ -23,26 +24,35 @@ public class SelectExecuter
 					int cardNum = rs.getInt("CARD_NUM");
 					Date loginStartDate = rs.getDate("LOG_IN_START_DATE");
 					Date loginEndDate = rs.getDate("LOG_IN_END_DATE");
-					sb.append(compID+"		"+cardNum+"		"+loginStartDate.toString()+"		"+loginEndDate.toString()+"\n");
+					sb.append(compID+"\t"+cardNum+"\t"+loginStartDate.toString()+"\t\t"+loginEndDate.toString()+"\n");
 				}
 				return sb.toString();
 			}
 			else if(option == 2)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery2);
+				sb.append("ROOM_ID\tLOCATION_IN_LIBRARY_ID\tNAME\tMAX_CAPACITY\n");
 				while(rs.next())
 				{
-//					SELECT * FROM STUDY_ROOMS WHERE MAX_CAPACITY >=5
+					int roomID = rs.getInt("ROOM_ID");
+					int locInLib = rs.getInt("LOCATION_IN_LIBRARY_ID");
+					String name = rs.getString("NAME");
+					int maxCap = rs.getInt("MAX_CAPACITY");
+					sb.append(roomID+"\t"+locInLib+"\t\t"+name+"\t"+maxCap+"\n");
 				}
 				return sb.toString();
 			}
 			else if(option == 3)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery3);
+				sb.append("ROOM_ID\tCARD_NUM\tRESERVATION_START_DATE\tRESERVATION_END_DATE\n");
 				while(rs.next())
 				{
-//				SELECT * FROM ROOM_RESERVATIONS WHERE RESERVATION_START_DATE 
-//					>=TO_TIMESTAMP('2017-09-26','YYYY-MM-DD') AND RESERVATION_END_DATE<TO_TIMESTAMP('2017-09-29','YYYY-MM-DD')
+					int roomID = rs.getInt("ROOM_ID");
+					int cardNum = rs.getInt("CARD_NUM");
+					Date resStartDate = rs.getDate("RESERVATION_START_DATE");
+					Date resEndDate = rs.getDate("RESERVATION_END_DATE");
+					sb.append(roomID+"\t"+cardNum+"\t"+resStartDate+"\t\t"+resEndDate+"\n");
 				}
 				return sb.toString();
 			}
