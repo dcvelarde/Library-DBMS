@@ -144,7 +144,10 @@ public class CreateTables {
 						+", FOREIGN KEY (COMP_ID) REFERENCES COMPUTERS(COMP_ID)"
 						+", FOREIGN KEY (CARD_NUM) REFERENCES LIBRARY_CARDS(CARD_NUM)"
 						+")";		
-				
+		private final String createFullBooksInfoView = "CREATE VIEW \"FULL_BOOKS_INFO\" (\"ITEM_ID\", \"TITLE\", \"AUTHOR\", \"PUBLISHER\") AS "
+						+"SELECT ITEMS.ITEM_ID,ITEMS.TITLE, BOOKS.AUTHOR,BOOKS.PUBLISHER "
+						+"FROM ITEMS,BOOKS "
+						+"WHERE BOOKS.ITEM_ID = ITEMS.ITEM_ID";
 	public CreateTables()
 	{
 		
@@ -171,6 +174,7 @@ public class CreateTables {
 			statement.executeUpdate(createRoomReservationsQuery);
 			statement.executeUpdate(createComputersQuery);
 			statement.executeUpdate(createComputerLoginsQuery);
+			statement.executeUpdate(createFullBooksInfoView);
 			
 		} catch (SQLException e) 
 		{

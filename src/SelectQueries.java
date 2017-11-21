@@ -9,7 +9,7 @@ public class SelectQueries
 	public static final String selQuery6="SELECT * FROM LIBRARY_USERS WHERE FIRST_NAME = 'Jason' ORDER BY LAST_NAME ASC";
 	public static final String selQuery7="SELECT * FROM LIBRARIANS WHERE EMPLOYEE_TYPE = 'PART-TIME' ORDER BY FIRST_NAME ASC, LAST_NAME ASC";
 	public static final String selQuery8="SELECT * FROM BOOKS WHERE AUTHOR = 'J. GEORGE' OR AUTHOR='G. TOLKIEN'";
-	public static final String selQuery9="SELECT * FROM STUDY_ROOMS WHERE MAX_CAPACITY >=5";
+	public static final String selQuery9 = "SELECT * FROM FULL_BOOKS_INFO";
 	public static final String selQuery10="SELECT LIBRARY_CARDS.USER_ID,LIBRARY_USERS.FIRST_NAME,LIBRARY_USERS.LAST_NAME"
 											+"FROM LIBRARY_CARDS,LIBRARY_USERS"
 											+"WHERE EXPIRY_DATE <TO_DATE('01/01/2022','MM/DD/YYYY') AND"

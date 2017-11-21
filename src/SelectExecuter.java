@@ -99,9 +99,17 @@ public class SelectExecuter
 			else if(option == 9)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery9);
+				sb.append("TITLE\t\tAUTHOR\tPUBLISHER\tITEM_ID\n");
 				while(rs.next())
 				{
-					//SELECT * FROM STUDY_ROOMS WHERE MAX_CAPACITY >=5
+					String title = rs.getString("TITLE");
+					String author = rs.getString("AUTHOR");
+					String publisher = rs.getString("PUBLISHER");
+					int itemID = rs.getInt("ITEM_ID");
+					if(title.length()>=15)
+						sb.append(title+"\t"+author+"\t"+publisher+"\t"+itemID+"\n");
+					else
+						sb.append(title+"\t\t"+author+"\t"+publisher+"\t"+itemID+"\n");
 				}
 			}
 			else if(option == 10)

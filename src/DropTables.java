@@ -19,6 +19,7 @@ public class DropTables {
 	private final String dropRoomReservationsQuery = "DROP TABLE ROOM_RESERVATIONS";
 	private final String dropComputersQuery = "DROP TABLE COMPUTERS";
 	private final String dropComputerLoginsQuery = "DROP TABLE COMPUTER_LOGINS";
+	private final String dropFullBooksInfoView = "DROP VIEW FULL_BOOKS_INFO";
 	
 	public DropTables()
 	{
@@ -29,6 +30,7 @@ public class DropTables {
 	{
 		try
 		{
+			statement.executeUpdate(dropFullBooksInfoView);
 			statement.executeUpdate(dropRoomReservationsQuery);
 			statement.executeUpdate(dropStudyRoomsQuery);
 			
