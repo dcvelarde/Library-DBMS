@@ -6,7 +6,7 @@ public class SelectQueries
 	public static final String selQuery3="SELECT * FROM ROOM_RESERVATIONS WHERE RESERVATION_START_DATE >=TO_TIMESTAMP('2017-09-26','YYYY-MM-DD') AND RESERVATION_END_DATE<TO_TIMESTAMP('2017-09-29','YYYY-MM-DD')";
 	public static final String selQuery4="SELECT * FROM ADDRESS WHERE CITY = 'TORONTO'";
 	public static final String selQuery5="SELECT * FROM BORROWED_ITEMS WHERE DUE_DATE = TO_DATE('04/10/2017','MM/DD/YYYY')";
-	public static final String selQuery6="SELECT * FROM LIBRARY_USERS WHERE FIRST_NAME = 'Jason' ORDER BY LAST_NAME ASC";
+	public static final String selQuery6="SELECT * FROM LIBRARY_USERS WHERE FIRST_NAME = 'JASON' ORDER BY LAST_NAME ASC";
 	public static final String selQuery7="SELECT * FROM LIBRARIANS WHERE EMPLOYEE_TYPE = 'PART-TIME' ORDER BY FIRST_NAME ASC, LAST_NAME ASC";
 	public static final String selQuery8="SELECT * FROM BOOKS WHERE AUTHOR = 'J. GEORGE' OR AUTHOR='G. TOLKIEN'";
 	public static final String selQuery9 = "SELECT * FROM FULL_BOOKS_INFO";

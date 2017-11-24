@@ -92,9 +92,19 @@ public class SelectExecuter
 			else if(option == 6)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery6);
+				sb.append("USER_ID\tFIRST_NAME\tLAST_NAME\tEMAIL\t\t\tADDRESS_ID\n");
 				while(rs.next())
 				{
 					//SELECT * FROM LIBRARY_USERS WHERE FIRST_NAME = 'Jason' ORDER BY LAST_NAME ASC;
+					int userID = rs.getInt("USER_ID");
+					String firstName = rs.getString("FIRST_NAME");
+					String lastName = rs.getString("LAST_NAME");
+					String email = rs.getString("EMAIL");
+					int addressID = rs.getInt("ADDRESS_ID");
+					if(email.length()>=20)
+						sb.append(userID+"\t"+firstName+"\t"+lastName+"\t"+email+"\t"+addressID+"\n");
+					else
+						sb.append(userID+"\t"+firstName+"\t"+lastName+"\t"+email+"\t\t"+addressID+"\n");
 				}
 			}
 			else if(option == 7)
