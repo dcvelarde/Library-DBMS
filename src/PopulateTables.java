@@ -39,6 +39,11 @@ public class PopulateTables {
 			statement.executeUpdate(PopulateTableQueries.populateLibraryCards2);
 			statement.executeUpdate(PopulateTableQueries.populateLibraryCards3);
 			
+			/*Populate CARD_USER_RELATIONSHIP*/
+			statement.executeUpdate(PopulateTableQueries.populateCardUserRel1);
+			statement.executeUpdate(PopulateTableQueries.populateCardUserRel2);
+			statement.executeUpdate(PopulateTableQueries.populateCardUserRel3);
+			
 			/*Populate ITEMS*/
 			statement.executeUpdate(PopulateTableQueries.populateItems1);
 			statement.executeUpdate(PopulateTableQueries.populateItems2);
@@ -147,6 +152,7 @@ public class PopulateTables {
 		statement.executeUpdate(PopulateTableQueries.deleteAudioBooks);
 		statement.executeUpdate(PopulateTableQueries.deleteBooks);
 		statement.executeUpdate(PopulateTableQueries.deleteItems);
+		statement.executeUpdate(PopulateTableQueries.deleteCardUserRel);
 		statement.executeUpdate(PopulateTableQueries.deleteLibCards);
 		statement.executeUpdate(PopulateTableQueries.deleteLibrarians);
 		statement.executeUpdate(PopulateTableQueries.deleteLibUsers);

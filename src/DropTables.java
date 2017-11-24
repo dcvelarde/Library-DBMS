@@ -7,6 +7,7 @@ public class DropTables {
 	private final String dropLibrariansQuery = "DROP TABLE LIBRARIANS";
 	private final String dropLILQuery = "DROP TABLE LOCATION_IN_LIBRARY";
 	private final String dropLibraryCardsQuery = "DROP TABLE LIBRARY_CARDS";
+	private final String dropCardUserRelQuery = "DROP TABLE CARD_USER_RELATIONSHIP";
 	private final String dropItemsQuery = "DROP TABLE ITEMS";
 	private final String dropBorrowedItemsQuery = "DROP TABLE BORROWED_ITEMS";
 	private final String dropHoldItemsQuery = "DROP TABLE HOLD_ITEMS";
@@ -49,6 +50,7 @@ public class DropTables {
 			
 			statement.executeUpdate(dropLibrariansQuery);
 			
+			statement.execute(dropCardUserRelQuery);
 			statement.executeUpdate(dropLibraryCardsQuery);
 			statement.executeUpdate(dropLibUsersQuery);
 			

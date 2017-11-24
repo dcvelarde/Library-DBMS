@@ -67,19 +67,24 @@ public class SelectExecuter
 					String line2 = rs.getString("ADDRESS_LINE2");
 					String postalCode = rs.getString("POSTAL_CODE");
 //					BigInteger phoneNum = BigInteger.valueOf(rs.getInteger("PHONE_NUMBER").intValue());
-					Integer phoneNumInt = rs.getInt("PHONE_NUMBER");
-					BigInteger phoneNum = BigInteger.valueOf(phoneNumInt.intValue());
+					long phoneNum = rs.getLong("PHONE_NUMBER");
+//					BigInteger phoneNum = BigInteger.valueOf(phoneNumInt.intValue());
 					String city = rs.getString("CITY");
 					String province = rs.getString("PROVINCE");
-					sb.append(addressID+"\t"+line1+"\t"+line2+"\t"+postalCode+"\t"+phoneNum+"\t"+city+"\t"+province+"\n");
+					if(line1.length()>=15)
+						sb.append(addressID+"\t"+line1+"\t"+line2+"\t\t"+postalCode+"\t\t"+phoneNum+"\t\t"+city+"\t"+province+"\n");
+					else
+						sb.append(addressID+"\t"+line1+"\t\t"+line2+"\t\t"+postalCode+"\t\t"+phoneNum+"\t\t"+city+"\t"+province+"\n");
 				}
 			}
 			else if(option == 5)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery5);
+				sb.append("ITEM_ID\tDATE_BORROWED\tEXPIRY_DATE");
 				while(rs.next())
 				{
 					//SELECT * FROM BORROWED_ITEMS WHERE DUE_DATE = '04/10/2017'
+					
 				}
 			}
 			else if(option == 6)

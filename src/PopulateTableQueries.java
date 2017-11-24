@@ -15,6 +15,7 @@ public class PopulateTableQueries {
 	public static final String deleteAudioBooks="DELETE FROM AUDIO_BOOKS";
 	public static final String deleteBooks = "DELETE FROM BOOKS";
 	public static final String deleteItems="DELETE FROM ITEMS";
+	public static final String deleteCardUserRel = "DELETE FROM CARD_USER_RELATIONSHIP";
 	public static final String deleteLibCards="DELETE FROM LIBRARY_CARDS";
 	public static final String deleteLibrarians="DELETE FROM LIBRARIANS";
 	public static final String deleteLibUsers="DELETE FROM LIBRARY_USERS";
@@ -52,13 +53,21 @@ public class PopulateTableQueries {
 	public static final String populateLocInLib4 = "INSERT INTO LOCATION_IN_LIBRARY(LOCATION_IN_LIBRARY_ID,CATEGORY,AISLE_NUM) VALUES(10000001,'COMPUTERS',1)";
 	
 	/*LIBRARY_CARDS*/
-	public static final String populateLibraryCards1 = "INSERT INTO LIBRARY_CARDS(CARD_NUM, WHEN_CREATED, EXPIRY_DATE, USER_ID)"
-	+"VALUES(10032, TO_DATE('26/09/2017','DD/MM/YYYY'), TO_DATE('26/09/2021','DD/MM/YYYY'), 10023)";
-	public static final String populateLibraryCards2 = "INSERT INTO LIBRARY_CARDS(CARD_NUM, WHEN_CREATED, EXPIRY_DATE, USER_ID)"
-	+"VALUES(10034, TO_DATE('26/09/2017','DD/MM/YYYY'), TO_DATE('26/09/2021','DD/MM/YYYY'), 10024)";
-	public static final String populateLibraryCards3 = "INSERT INTO LIBRARY_CARDS(CARD_NUM, WHEN_CREATED, EXPIRY_DATE, USER_ID)"
-	+"VALUES(10036, TO_DATE('26/09/2017','DD/MM/YYYY'), TO_DATE('26/09/2021','DD/MM/YYYY'), 10025)";
+	public static final String populateLibraryCards1 = "INSERT INTO LIBRARY_CARDS(CARD_NUM, WHEN_CREATED, EXPIRY_DATE)"
+	+"VALUES(10032, TO_DATE('26/09/2017','DD/MM/YYYY'), TO_DATE('26/09/2021','DD/MM/YYYY'))";
+	public static final String populateLibraryCards2 = "INSERT INTO LIBRARY_CARDS(CARD_NUM, WHEN_CREATED, EXPIRY_DATE)"
+	+"VALUES(10034, TO_DATE('26/09/2017','DD/MM/YYYY'), TO_DATE('26/09/2021','DD/MM/YYYY'))";
+	public static final String populateLibraryCards3 = "INSERT INTO LIBRARY_CARDS(CARD_NUM, WHEN_CREATED, EXPIRY_DATE)"
+	+"VALUES(10036, TO_DATE('26/09/2017','DD/MM/YYYY'), TO_DATE('26/09/2021','DD/MM/YYYY'))";
 	
+	/*CARD_USER_RELATIONSHIP*/
+	public static final String populateCardUserRel1 = "INSERT INTO CARD_USER_RELATIONSHIP(USER_ID,CARD_NUM)"
+			+ "VALUES(10023,10032)";
+	public static final String populateCardUserRel2 = "INSERT INTO CARD_USER_RELATIONSHIP(USER_ID,CARD_NUM)"
+			+ "VALUES(10024,10034)";
+	public static final String populateCardUserRel3 = "INSERT INTO CARD_USER_RELATIONSHIP(USER_ID,CARD_NUM)"
+					+ "VALUES(10025,10036)";
+		
 	/*ITEMS*/
 	public static final String populateItems1 = "INSERT INTO ITEMS(ITEM_ID, LOCATION_IN_LIBRARY_ID, TITLE, AVAILABLE) VALUES(10038, 10029, 'MOBY DICK', 1)";
 	public static final String populateItems2 = "INSERT INTO ITEMS(ITEM_ID, LOCATION_IN_LIBRARY_ID, TITLE, AVAILABLE) VALUES(10041, 10030, 'ART OF WAR', 0)";

@@ -39,14 +39,28 @@ public class CreateTables {
 					+", PRIMARY KEY(LOCATION_IN_LIBRARY_ID)"
 					+")";
 	
+//	private final String createLibraryCardsQuery = "CREATE TABLE LIBRARY_CARDS("
+//					  +"CARD_NUM INTEGER NOT NULL "
+//					+", WHEN_CREATED DATE DEFAULT NULL" 
+//					+", EXPIRY_DATE DATE DEFAULT NULL"
+//					+", USER_ID INTEGER NOT NULL"
+//					+", PRIMARY KEY(CARD_NUM)"
+//					+", FOREIGN KEY (USER_ID) REFERENCES LIBRARY_USERS(USER_ID)"
+//					+")";
+	
 	private final String createLibraryCardsQuery = "CREATE TABLE LIBRARY_CARDS("
-					  +"CARD_NUM INTEGER NOT NULL "
-					+", WHEN_CREATED DATE DEFAULT NULL" 
-					+", EXPIRY_DATE DATE DEFAULT NULL"
-					+", USER_ID INTEGER NOT NULL"
-					+", PRIMARY KEY(CARD_NUM)"
-					+", FOREIGN KEY (USER_ID) REFERENCES LIBRARY_USERS(USER_ID)"
-					+")";
+			  +"CARD_NUM INTEGER NOT NULL "
+			+", WHEN_CREATED DATE DEFAULT NULL" 
+			+", EXPIRY_DATE DATE DEFAULT NULL"
+			+", PRIMARY KEY(CARD_NUM)"
+			+")";
+	
+	private final String createCardUserRelQuery = "CREATE TABLE CARD_USER_RELATIONSHIP("
+			+ "USER_ID INTEGER NOT NULL"
+			+ ", CARD_NUM INTEGER NOT NULL"
+			+ ", FOREIGN KEY (USER_ID) REFERENCES LIBRARY_USERS(USER_ID)"
+			+ ", FOREIGN KEY (CARD_NUM) REFERENCES LIBRARY_CARDS(CARD_NUM)"
+			+ ")";
 	
 	private final String createItemsQuery = "CREATE TABLE ITEMS("
 					  +"ITEM_ID INTEGER NOT NULL"
@@ -162,6 +176,7 @@ public class CreateTables {
 			statement.executeUpdate(createLibrariansQuery);
 			statement.executeUpdate(createLILQuery);
 			statement.executeUpdate(createLibraryCardsQuery);
+			statement.executeUpdate(createCardUserRelQuery);
 			statement.executeUpdate(createItemsQuery);
 			statement.executeUpdate(createBorrowedItemsQuery );
 			statement.executeUpdate(createHoldItemsQuery);
