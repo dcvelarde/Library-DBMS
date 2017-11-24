@@ -110,9 +110,14 @@ public class SelectExecuter
 			else if(option == 7)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery7);
+				sb.append("EMPLOYEE_ID\tFIRST_NAME\tLAST_NAME\tEMPLOYEE_TYPE\n");
 				while(rs.next())
 				{
-					//SELECT * FROM LIBRARIANS WHERE EMPLOYEE_TYPE = 'PART-TIME' ORDER BY FIRST_NAME ASC, LAST_NAME ASC
+					int empID = rs.getInt("EMPLOYEE_ID");
+					String firstName = rs.getString("FIRST_NAME");
+					String lastName = rs.getString("LAST_NAME");
+					String empType = rs.getString("EMPLOYEE_TYPE");
+					sb.append(empID+"\t"+firstName+"\t"+lastName+"\t"+empType+"\n");
 				}
 			}
 			else if(option == 8)
