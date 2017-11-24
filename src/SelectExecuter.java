@@ -66,9 +66,7 @@ public class SelectExecuter
 					String line1 = rs.getString("ADDRESS_LINE1");
 					String line2 = rs.getString("ADDRESS_LINE2");
 					String postalCode = rs.getString("POSTAL_CODE");
-//					BigInteger phoneNum = BigInteger.valueOf(rs.getInteger("PHONE_NUMBER").intValue());
 					long phoneNum = rs.getLong("PHONE_NUMBER");
-//					BigInteger phoneNum = BigInteger.valueOf(phoneNumInt.intValue());
 					String city = rs.getString("CITY");
 					String province = rs.getString("PROVINCE");
 					if(line1.length()>=15)
@@ -80,11 +78,15 @@ public class SelectExecuter
 			else if(option == 5)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery5);
-				sb.append("ITEM_ID\tDATE_BORROWED\tEXPIRY_DATE");
+				sb.append("ITEM_ID\tDATE_BORROWED\tDUE_DATE\tCARD_NUM\n");
 				while(rs.next())
 				{
 					//SELECT * FROM BORROWED_ITEMS WHERE DUE_DATE = '04/10/2017'
-					
+					int itemID = rs.getInt("ITEM_ID");
+					Date dateBorrowed = rs.getDate("DATE_BORROWED");
+					Date dueDate = rs.getDate("DUE_DATE");
+					int cardNum = rs.getInt("CARD_NUM");
+					sb.append(itemID+"\t"+dateBorrowed+"\t\t"+dueDate+"\t"+cardNum+"\n");					
 				}
 			}
 			else if(option == 6)
