@@ -123,9 +123,16 @@ public class SelectExecuter
 			else if(option == 8)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery8);
+				sb.append("ITEM_ID\tISBN\t\tAUTHOR\tPUBLISHER\n");
 				while(rs.next())
 				{
 					//SELECT * FROM BOOKS WHERE AUTHOR = 'J. GEORGE' OR AUTHOR='G. TOLKIEN'
+					int itemID = rs.getInt("ITEM_ID");
+					String isbn = rs.getString("ISBN");
+					String author = rs.getString("AUTHOR");
+					String publisher = rs.getString("PUBLISHER");
+					sb.append(itemID+"\t"+isbn+"\t"+author+"\t"+publisher+"\n");
+					
 				}
 			}
 			else if(option == 9)
@@ -147,32 +154,24 @@ public class SelectExecuter
 			else if(option == 10)
 			{
 				rs = statement.executeQuery(SelectQueries.selQuery10);
+				sb.append("USER_ID\tFIRST_NAME\tLAST_NAME\n");
 				while(rs.next())
 				{
-//					SELECT LIBRARY_CARDS.USER_ID,LIBRARY_USERS.FIRST_NAME,LIBRARY_USERS.LAST_NAME
-//					FROM LIBRARY_CARDS,LIBRARY_USERS
-//					WHERE EXPIRY_DATE <TO_DATE('01/01/2022','MM/DD/YYYY') AND
-//					EXPIRY_DATE>TO_DATE('01/01/2017','MM/DD/YYYY')
-//					AND LIBRARY_CARDS.USER_ID = LIBRARY_USERS.USER_ID
-//					ORDER BY LAST_NAME ASC;
-					
-					
+					int userID = rs.getInt("USER_ID");
+					String firstName = rs.getString("FIRST_NAME");
+					String lastName = rs.getString("LAST_NAME");
+					sb.append(userID+"\t"+firstName+"\t"+lastName+"\n");					
 				}
 			}
 			else
 			{
-				rs = statement.executeQuery(SelectQueries.selQuery11);				
+				rs = statement.executeQuery(SelectQueries.selQuery11);	
+				sb.append("ROOM_ID\tNAME\t\n");
 				while(rs.next())
 				{
-//					SELECT sr.ROOM_ID,sr.NAME
-//					FROM STUDY_ROOMS sr
-//					WHERE NOT EXISTS
-//					(SELECT rr.ROOM_ID
-//					FROM ROOM_RESERVATIONS rr
-//					WHERE rr.RESERVATION_START_DATE>=TO_DATE('09/25/2017','MM/DD/YYYY')
-//					AND rr.RESERVATION_END_DATE <= TO_DATE('09/30/2017','MM/DD/YYYY')
-//					AND sr.ROOM_ID = rr.ROOM_ID)
-//					ORDER BY NAME ASC;
+					int roomID = rs.getInt("ROOM_ID");
+					String name = rs.getString("NAME");
+					sb.append(roomID+"\t"+name+"\n");
 				}
 				
 			}
